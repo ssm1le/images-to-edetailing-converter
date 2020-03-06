@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- components -->
+	<rv-template name="common-components"></rv-template>
+	<!-- /components -->
+
+	<!-- styles -->
+	<link rel="stylesheet" href="styles/template.css">
+	<!-- /styles -->
+</head>
+
+<body>
+	<article class="slide grid-template-1">
+
+		<!-- layout -->
+		<rv-template name="layout"></rv-template>
+		<!-- /layout -->
+
+		<co-grid-container fixed id="headlineWrapper" class="headline-wrapper back-cont-bio" user-label="Headline & Subhead container">
+			<co-image id="bg" model="m.bg" user-label="Background image"></co-image>
+		</co-grid-container>
+
+		<co-grid-container fixed id="contentArea" class="content-area" user-label="Content area"></co-grid-container>
+
+		<co-grid-container fixed id="calloutArea" class="callout-area" user-label="Callout area"></co-grid-container>
+
+		<co-grid-container fixed id="footnoteArea" class="footnote-area" user-label="Footnote area"></co-grid-container>
+	</article>
+
+	<script src="../spa/bundle.js"></script>
+</body>
+
+</html>

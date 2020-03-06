@@ -1,0 +1,19 @@
+{
+  "name": "images-to-edetailing-converter",
+  "version": "0.0.0",
+  "main": "index.js",
+  "bin": {
+    "itec": "./cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^4.0.1",
+    "execa": "^3.4.0",
+    "fs-extra": "^8.1.0",
+    "jimp": "^0.9.3",
+    "listr": "^0.14.3",
+    "rimraf": "^3.0.0"
+  }
+}

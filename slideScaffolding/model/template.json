@@ -1,0 +1,7 @@
+{
+    "bg": {
+        "src": "media/images/template/bg.jpg",
+        "size": "contain",
+        "position": "center center"
+    }
+}
