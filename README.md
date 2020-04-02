@@ -7,23 +7,19 @@
 
 <b>Command:</b> 
 
-	itec [presentation] -t [top] -b [bottom] -s [screens]
+	cob [path to presentation] -s [path to screens]
+
+<b>Config:</b>
+
+> masterPresentationSSH - master presentation ssh key
+
+	{
+		"masterPresentationSSH": "git@git.qapint.com:m.molodetskiy/cobalt-template.git"
+	}
+
 
 <b>Arguments:</b>
 
 > path to presentation (empty folder)
 
-	presentation
-
-<b>Flags:</b> 
-
-> Number of pixels to trim top and bottom of picture
-
-	-t [top]
-	-b [bottom]
-
 > Path to folder with screens (can be `png` or `jpg`): *./screens* - by default
-
-	-s [screens]
-
-

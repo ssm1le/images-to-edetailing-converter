@@ -6,6 +6,7 @@ const execa = require('execa');
 const rimraf = require('rimraf');
 
 const Listr = require('listr');
+const masterPresentationSSH = require('./config.json').masterPresentationSSH;
 
 module.exports = async function ({ presentationPath, screensPath}) {
 
@@ -30,13 +31,12 @@ module.exports = async function ({ presentationPath, screensPath}) {
 			task: _ => new Listr([
 				{
 					title: 'copy images',
-					task: _ => copyimagesArray(presentationPath, screensPath, imagesArray)
+					task: _ => copyImagesArray(presentationPath, screensPath, imagesArray)
 				},
 				{
 					title: 'update structure',
-					task: _ => updatemplateructure(presentationPath, imagesArray)
+					task: _ => updateStructure(presentationPath, imagesArray)
 				}
-
 
 			], {
 				concurrent: true
@@ -53,7 +53,7 @@ module.exports = async function ({ presentationPath, screensPath}) {
 	})
 }
 
-function copyimagesArray(presentationPath, screensPath, imagesArray) {
+function copyImagesArray(presentationPath, screensPath, imagesArray) {
 	const appPath = join(presentationPath, 'app');
 	return Promise.all(
 		imagesArray.map(async (imageName, i) => {
@@ -119,7 +119,7 @@ async function generateI18n(appPath, slideId) {
 	fse.renameSync(join(`${i18nPath}`, 'template.json'), join(`${i18nPath}`, `${slideId}.json`));
 }
 
-async function updatemplateructure(presentationPath, imagesArray) {
+async function updateStructure(presentationPath, imagesArray) {
 	const structure = await fse.readJSON(join(presentationPath, 'structure.json'));
 
 	structure.slides = {
@@ -141,7 +141,7 @@ async function updatemplateructure(presentationPath, imagesArray) {
 }
 
 async function cloneMaster(presentationPath) {
-	await execa.command(`git clone git@git.qapint.com:m.molodetskiy/cobalt-template.git ${presentationPath}`)
+	await execa.command(`git clone ${masterPresentationSSH} ${presentationPath}`)
 	rimraf.sync(join(presentationPath, '.git'));
 }
 
