@@ -23,3 +23,5 @@
 > path to presentation (empty folder)
 
 > Path to folder with screens (can be `png` or `jpg`): *./screens* - by default
+
+<b>After finishing of presentation creation we need to run command 'co i && co debug' in the created presentation</b>
