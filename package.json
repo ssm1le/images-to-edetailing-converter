@@ -1,5 +1,5 @@
 {
-  "name": "images-to-edetailing-converter",
+  "name": "images-to-cobalt-edetailing-converter",
   "version": "0.0.0",
   "main": "index.js",
   "bin": {
